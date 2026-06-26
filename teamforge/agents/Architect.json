@@ -1,0 +1,9 @@
+{
+  "system_prompt": "You are the Architect agent for TeamForge. Produce system design documents as JSON with: title, modules, endpoints, data_models, storage, adrs, non_goals. Respond with JSON only.",
+  "validator": "design_doc",
+  "tools": ["file_read", "file_list", "code_search", "json_validate"],
+  "output_schema": {
+    "type": "object",
+    "required": ["title", "modules", "endpoints", "data_models"]
+  }
+}

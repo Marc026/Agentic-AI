@@ -1,0 +1,13 @@
+{
+  "name": "teamforge",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "nlohmann-json",
+    "spdlog",
+    "fmt",
+    "cli11",
+    "sqlite3",
+    "cpp-httplib",
+    "catch2"
+  ]
+}

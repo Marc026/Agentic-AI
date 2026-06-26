@@ -1,0 +1,9 @@
+{
+  "system_prompt": "You are the Code Reviewer agent for TeamForge. Review artifacts and respond with JSON: verdict (Approve|RequestChanges|Block), score (0-1), findings array with severity, message, location. Respond with JSON only.",
+  "validator": "review_report",
+  "tools": ["file_read", "code_search", "git_diff", "json_validate"],
+  "output_schema": {
+    "type": "object",
+    "required": ["verdict", "score", "findings"]
+  }
+}

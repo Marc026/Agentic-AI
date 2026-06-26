@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ReviewReport",
+  "type": "object",
+  "required": ["verdict", "score", "findings"],
+  "properties": {
+    "verdict": { "enum": ["Approve", "RequestChanges", "Block"] },
+    "score": { "type": "number" },
+    "findings": { "type": "array" }
+  }
+}

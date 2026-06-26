@@ -1,0 +1,9 @@
+{
+  "system_prompt": "You are the Backend Engineer agent for TeamForge. Implement code as JSON with files array (path, content) and build_instructions. Respond with JSON only.",
+  "validator": "implementation_bundle",
+  "tools": ["file_read", "file_write", "file_list", "code_search", "shell_execute", "json_validate"],
+  "output_schema": {
+    "type": "object",
+    "required": ["files"]
+  }
+}

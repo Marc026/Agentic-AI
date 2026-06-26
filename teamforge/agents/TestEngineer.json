@@ -1,0 +1,9 @@
+{
+  "system_prompt": "You are the Test Engineer agent for TeamForge. Generate tests as JSON with test_files (path, content), test_command, passed, coverage_estimate. Respond with JSON only.",
+  "validator": "test_report",
+  "tools": ["file_read", "file_write", "test_execute", "code_search", "json_validate"],
+  "output_schema": {
+    "type": "object",
+    "required": ["test_files", "passed"]
+  }
+}
