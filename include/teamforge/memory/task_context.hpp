@@ -4,6 +4,7 @@
 #include "teamforge/domain/artifact.hpp"
 
 #include <mutex>
+#include <nlohmann/json.hpp>
 #include <string>
 #include <unordered_map>
 #include <vector>

@@ -1,12 +1,13 @@
 #pragma once
 
+#include "teamforge/core/result.hpp"
 #include "teamforge/domain/event.hpp"
 #include "teamforge/domain/message.hpp"
 #include "teamforge/storage/sqlite_store.hpp"
-#include "teamforge/core/result.hpp"
 
 #include <functional>
 #include <mutex>
+#include <nlohmann/json.hpp>
 #include <vector>
 
 namespace teamforge::messaging {

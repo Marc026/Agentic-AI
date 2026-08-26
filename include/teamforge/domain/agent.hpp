@@ -5,6 +5,7 @@
 #include "teamforge/domain/types.hpp"
 
 #include <nlohmann/json.hpp>
+#include <optional>
 #include <set>
 #include <string>
 #include <vector>

@@ -1,9 +1,10 @@
 #pragma once
 
-#include "teamforge/domain/agent.hpp"
 #include "teamforge/core/result.hpp"
+#include "teamforge/domain/agent.hpp"
 
 #include <filesystem>
+#include <nlohmann/json.hpp>
 #include <string>
 
 namespace teamforge::validation {

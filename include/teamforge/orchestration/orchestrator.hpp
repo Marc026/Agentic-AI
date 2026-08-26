@@ -1,17 +1,25 @@
 #pragma once
 
 #include "teamforge/agents/agent_runner.hpp"
+#include "teamforge/core/result.hpp"
+#include "teamforge/domain/artifact.hpp"
+#include "teamforge/domain/event.hpp"
+#include "teamforge/domain/subtask.hpp"
 #include "teamforge/domain/task.hpp"
+#include "teamforge/llm/llm_provider.hpp"
 #include "teamforge/messaging/event_log.hpp"
 #include "teamforge/memory/task_context.hpp"
 #include "teamforge/orchestration/workflow_engine.hpp"
 #include "teamforge/storage/sqlite_store.hpp"
 #include "teamforge/telemetry/logger.hpp"
+#include "teamforge/tools/tool_registry.hpp"
 #include "teamforge/validation/validator_hub.hpp"
 
 #include <chrono>
 #include <filesystem>
 #include <memory>
+#include <string>
+#include <vector>
 
 namespace teamforge::orchestration {
 

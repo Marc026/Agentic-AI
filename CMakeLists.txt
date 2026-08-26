@@ -109,3 +109,11 @@ add_executable(teamforge_tests
 target_link_libraries(teamforge_tests PRIVATE teamforge_lib Catch2::Catch2WithMain)
 include(Catch)
 catch_discover_tests(teamforge_tests)
+
+# Copy compile_commands.json to project root for clangd/IDE (Ninja/Make generators).
+if(CMAKE_EXPORT_COMPILE_COMMANDS)
+    set(_compdb "${CMAKE_BINARY_DIR}/compile_commands.json")
+    if(EXISTS "${_compdb}")
+        file(COPY "${_compdb}" DESTINATION "${CMAKE_SOURCE_DIR}")
+    endif()
+endif()

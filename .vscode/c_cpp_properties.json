@@ -1,17 +1,36 @@
 {
   "configurations": [
     {
-      "name": "windows-msvc-x64",
+      "name": "Win32",
       "includePath": [
-        "${workspaceFolder}/**"
+        "${workspaceFolder}/include",
+        "${workspaceFolder}/build-ninja/_deps/nlohmann_json-src/include",
+        "${workspaceFolder}/build-ninja/_deps/spdlog-src/include",
+        "${workspaceFolder}/build-ninja/_deps/cli11-src/include",
+        "${workspaceFolder}/build-ninja/_deps/catch2-src/src",
+        "${workspaceFolder}/build-ninja/_deps/httplib-src",
+        "${workspaceFolder}/build-ninja/_deps/sqlite3-src",
+        "${workspaceFolder}/build/_deps/nlohmann_json-src/include",
+        "${workspaceFolder}/build/_deps/spdlog-src/include",
+        "${workspaceFolder}/build/_deps/cli11-src/include",
+        "${workspaceFolder}/build/_deps/catch2-src/src",
+        "${workspaceFolder}/build/_deps/httplib-src",
+        "${workspaceFolder}/build/_deps/sqlite3-src"
       ],
-      "compilerPath": "cl.exe",
-      "cStandard": "c11",
-      "cppStandard": "${default}",
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE",
+        "WIN32",
+        "_WINDOWS",
+        "SPDLOG_COMPILED_LIB"
+      ],
+      "windowsSdkVersion": "10.0.26100.0",
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
+      "cStandard": "c17",
+      "cppStandard": "c++20",
       "intelliSenseMode": "windows-msvc-x64",
-      "compilerArgs": [
-        ""
-      ]
+      "compileCommands": "${workspaceFolder}/compile_commands.json"
     }
   ],
   "version": 4

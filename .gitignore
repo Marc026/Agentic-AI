@@ -1,4 +1,6 @@
 build/
+build-ninja/
+compile_commands.json
 data/
 .vs/
 .vscode/
