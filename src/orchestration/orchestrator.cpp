@@ -25,7 +25,7 @@ Orchestrator::Orchestrator(OrchestratorConfig config)
       revision_policy_(5) {
     const auto init = store_.initialize();
     if (init.is_err()) {
-        telemetry::Logger::error("Failed to initialize store: {}", init.error());
+        telemetry::Logger::error("Failed to initialize store: " + init.error());
     }
 
     install_default_tools(tools_);

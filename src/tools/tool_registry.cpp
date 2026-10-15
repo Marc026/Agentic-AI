@@ -17,7 +17,7 @@ Result<ToolOutput> ToolRegistry::execute(const ToolInput& input, ExecutionContex
     if (it == tools_.end()) {
         return Result<ToolOutput>::err("Unknown tool: " + input.tool_name);
     }
-    telemetry::Logger::debug("Executing tool: {}", input.tool_name);
+    telemetry::Logger::debug("Executing tool: " + input.tool_name);
     return it->second->execute(input, ctx);
 }
 

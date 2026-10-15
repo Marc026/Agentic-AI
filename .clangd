@@ -1,9 +1,6 @@
 CompileFlags:
   CompilationDatabase: build-ninja
+  Add: [/std:c++20, /EHsc, /Zc:__cplusplus]
 
 Diagnostics:
-  UnusedIncludes: Strict
-
-QueryDriver:
-  - C:\Program Files\Microsoft Visual Studio\**\cl.exe
-  - C:\Program Files (x86)\Microsoft Visual Studio\**\cl.exe
+  UnusedIncludes: None

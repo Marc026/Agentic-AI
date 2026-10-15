@@ -180,8 +180,8 @@ Result<domain::AgentOutput> AgentRunner::run(const domain::AgentInput& input) {
     req.messages = {{"system", build_system_prompt(desc, input)}, {"user", input.objective}};
     req.max_tokens = input.constraints.max_tokens;
 
-    telemetry::Logger::info("Running agent {} for subtask {}",
-                            domain::to_string(desc.role), input.subtask_id);
+    telemetry::Logger::info("Running agent " + domain::to_string(desc.role) + " for subtask " +
+                            input.subtask_id);
 
     auto llm_result = llm_.complete(req);
     if (llm_result.is_err()) return Result<domain::AgentOutput>::err(llm_result.error());

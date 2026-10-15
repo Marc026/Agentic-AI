@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-#include <spdlog/spdlog.h>
 #include <string>
 
 namespace teamforge::telemetry {
@@ -9,26 +7,10 @@ namespace teamforge::telemetry {
 class Logger {
 public:
     static void init(const std::string& level = "info");
-
-    template <typename... Args>
-    static void info(fmt::format_string<Args...> fmt, Args&&... args) {
-        spdlog::info(fmt, std::forward<Args>(args)...);
-    }
-
-    template <typename... Args>
-    static void warn(fmt::format_string<Args...> fmt, Args&&... args) {
-        spdlog::warn(fmt, std::forward<Args>(args)...);
-    }
-
-    template <typename... Args>
-    static void error(fmt::format_string<Args...> fmt, Args&&... args) {
-        spdlog::error(fmt, std::forward<Args>(args)...);
-    }
-
-    template <typename... Args>
-    static void debug(fmt::format_string<Args...> fmt, Args&&... args) {
-        spdlog::debug(fmt, std::forward<Args>(args)...);
-    }
+    static void info(const std::string& message);
+    static void warn(const std::string& message);
+    static void error(const std::string& message);
+    static void debug(const std::string& message);
 };
 
 struct Metrics {

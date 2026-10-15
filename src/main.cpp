@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
     teamforge::orchestration::Orchestrator orchestrator(config);
 
     if (run_cmd->parsed()) {
-        teamforge::telemetry::Logger::info("Starting task: {}", request);
+        teamforge::telemetry::Logger::info("Starting task: " + request);
         auto result = orchestrator.run(request);
         if (result.is_err()) {
             std::cerr << "Error: " << result.error() << "\n";

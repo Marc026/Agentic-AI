@@ -1,36 +1,43 @@
 #pragma once
 
-#include <optional>
 #include <string>
 #include <utility>
-#include <variant>
 
 namespace teamforge {
 
 template <typename T>
 class Result {
 public:
-    static Result ok(T value) { return Result(std::move(value)); }
-    static Result err(std::string message) { return Result(std::move(message)); }
+    static Result ok(T value) {
+        Result r;
+        r.ok_ = true;
+        r.value_ = std::move(value);
+        return r;
+    }
 
-    [[nodiscard]] bool is_ok() const { return std::holds_alternative<T>(data_); }
-    [[nodiscard]] bool is_err() const { return std::holds_alternative<std::string>(data_); }
+    static Result err(std::string message) {
+        Result r;
+        r.error_ = std::move(message);
+        return r;
+    }
 
-    T& value() { return std::get<T>(data_); }
-    const T& value() const { return std::get<T>(data_); }
+    [[nodiscard]] bool is_ok() const { return ok_; }
+    [[nodiscard]] bool is_err() const { return !ok_; }
 
-    const std::string& error() const { return std::get<std::string>(data_); }
+    T& value() { return value_; }
+    const T& value() const { return value_; }
+
+    const std::string& error() const { return error_; }
 
     T value_or(T fallback) const {
-        if (is_ok()) return std::get<T>(data_);
+        if (ok_) return value_;
         return fallback;
     }
 
 private:
-    explicit Result(T value) : data_(std::move(value)) {}
-    explicit Result(std::string error) : data_(std::move(error)) {}
-
-    std::variant<T, std::string> data_;
+    bool ok_{false};
+    T value_{};
+    std::string error_;
 };
 
 template <>
